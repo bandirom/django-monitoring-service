@@ -55,3 +55,9 @@ django-microservice-request==0.1.4.5
 
 # RangeFilter for admin
 django-admin-rangefilter==0.8.1
+
+# WebSockets
+channels==3.0.4
+channels-redis==3.3.0
+cryptography==3.3.1
+Twisted[tls,http2]==21.7.0

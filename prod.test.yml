@@ -14,7 +14,7 @@ services:
     build:
       context: .
       dockerfile: docker/prod/nginx/Dockerfile
-  web:
+  monitoring:
     entrypoint: /tests.sh
     restart: 'no'
     environment:

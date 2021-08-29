@@ -8,7 +8,6 @@ from .additional_settings.cacheops_settings import *
 from .additional_settings.logging_settings import *
 from .additional_settings.celery_settings import *
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
@@ -26,6 +25,7 @@ MICROSERVICE_TITLE = os.environ.get('MICROSERVICE_TITLE', 'Template')
 MICROSERVICE_PREFIX = os.environ.get('MICROSERVICE_PREFIX', '')
 
 REDIS_URL = os.environ.get('REDIS_URL')
+REDIS_SOCKET = os.environ.get('REDIS_SOCKET')
 
 USE_HTTPS = int(os.environ.get('USE_HTTPS', 0))
 ENABLE_SENTRY = int(os.environ.get('ENABLE_SENTRY', 0))
@@ -62,6 +62,7 @@ THIRD_PARTY_APPS = [
     'drf_yasg',
     'corsheaders',
     'rosetta',
+    'channels',
 ]
 
 LOCAL_APPS = [
@@ -70,7 +71,6 @@ LOCAL_APPS = [
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS
-
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -87,6 +87,14 @@ MIDDLEWARE = [
 
 ]
 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [REDIS_SOCKET],
+        },
+    },
+}
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'microservice_request.permissions.HasApiKeyOrIsAuthenticated',
@@ -105,7 +113,6 @@ if ENABLE_RENDERING:
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.TemplateHTMLRenderer',
     )
-
 
 ROOT_URLCONF = 'src.urls'
 
@@ -190,11 +197,11 @@ ROSETTA_MESSAGES_SOURCE_LANGUAGE_NAME = 'English'
 ROSETTA_SHOW_AT_ADMIN_PANEL = True
 ROSETTA_ENABLE_TRANSLATION_SUGGESTIONS = False
 
-
 if JAEGER_AGENT_HOST := os.environ.get('JAEGER_AGENT_HOST'):
     from jaeger_client import Config
     from jaeger_client.config import DEFAULT_REPORTING_PORT
     from django_opentracing import DjangoTracing
+
     """If you don't need to trace all requests, comment middleware and set OPENTRACING_TRACE_ALL = False
         More information https://github.com/opentracing-contrib/python-django/#tracing-individual-requests
     """
@@ -218,6 +225,7 @@ if (SENTRY_DSN := os.environ.get('SENTRY_DSN')) and ENABLE_SENTRY:
     # More information on site https://sentry.io/
     from sentry_sdk import init
     from sentry_sdk.integrations.django import DjangoIntegration
+
     init(
         dsn=SENTRY_DSN,
         integrations=[DjangoIntegration()],

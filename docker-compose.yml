@@ -4,7 +4,7 @@ x-variables: &variables
   ENV_STAGE: local
 
 services:
-  web:
+  monitoring:
     build:
       context: .
       dockerfile: docker/dev/web/Dockerfile
@@ -14,7 +14,7 @@ services:
       - redis_socket:/redis_socket
       - postgres_socket:/postgres_socket
     ports:
-      - 8000:8000
+      - 8010:8000
     environment:
       <<: *variables
     env_file:

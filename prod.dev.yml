@@ -12,7 +12,7 @@ services:
       dockerfile: docker/prod/nginx/Dockerfile
     ports:
       - 9000:9000
-  web:
+  monitoring:
     environment:
       <<: *variables
       SWAGGER_URL: http://localhost:9000

@@ -1,3 +1,8 @@
 
 -r ./base.txt
+
+# Gunicorn
 gunicorn==20.1.0
+
+# WebSockets
+daphne==3.0.2
