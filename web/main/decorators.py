@@ -1,4 +1,6 @@
 import logging
+from functools import wraps
+
 from django.core.cache import cache
 from requests.exceptions import RequestException
 from kombu.exceptions import OperationalError
@@ -9,15 +11,20 @@ from smtplib import SMTPRecipientsRefused
 logger = logging.getLogger(__name__)
 
 
-def cached_function_result(timeout=300):
+def cached_result(key: str, timeout: int = 300, version: int = None):
+    key = cache.make_key(key, version=version)
+
     def decorator(function):
+        @wraps(function)
         def wrapper(*args, **kwargs):
-            if function.__name__ in cache:
-                return cache.get(function.__name__)
+            if key in cache:
+                return cache.get(key)
             result = function(*args, **kwargs)
-            cache.set(function.__name__, result, timeout=timeout)
+            cache.set(key, result, timeout=timeout)
             return result
+
         return wrapper
+
     return decorator
 
 
@@ -41,18 +48,18 @@ def execution_time(stdout: str = 'console'):
     return decorator
 
 
-def except_shell(errors=(Exception,), default_value=''):
+def except_shell(errors=(Exception,), default_value=None):
     def decorator(func):
         def new_func(*args, **kwargs):
             try:
                 return func(*args, **kwargs)
             except errors as e:
                 logging.error(e)
-                return default_value or None
+                return default_value
         return new_func
     return decorator
 
 
 request_shell = except_shell((RequestException,))
 celery_shell = except_shell((OperationalError, TimeoutError))
-smtp_shell = except_shell((SMTPRecipientsRefused,))
+smtp_shell = except_shell((SMTPRecipientsRefused,), default_value=False)
