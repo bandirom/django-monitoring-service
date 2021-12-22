@@ -1,0 +1,516 @@
+<nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      <!-- Add icons to the links using the .nav-icon class
+           with font-awesome or any other icon font library -->
+        <li id="dashboards_menu" class="nav-item has-treeview ">
+            <a id="dashboards_panel" href="#" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard<i class="right fas fa-angle-left"></i></p>
+            </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a id="dashboard_v1" href="{% url 'admin_lte:index' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Dashboard v1</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="dashboard_v2" href="{% url 'admin_lte:index2' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Dashboard v2</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="dashboard_v3" href="{% url 'admin_lte:index3' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Dashboard v3</p>
+            </a>
+          </li>
+        </ul>
+        </li>
+        <li class="nav-item">
+          <a id="widgets" href="{% url 'admin_lte:widgets' %}" class="nav-link">
+          <i class="nav-icon fas fa-th"></i>
+          <p>Widgets
+            <span class="right badge badge-danger">New</span>
+          </p>
+        </a>
+        </li>
+        <li id="layout_menu" class="nav-item has-treeview">
+            <a id="layout_panel" href="#" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>Layout Options
+                    <i class="fas fa-angle-left right"></i>
+                    <span class="badge badge-info right">6</span>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a id="layout_top-nav" href="{% url 'admin_lte:layout_top-nav' %}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Top Navigation</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="layout_top-nav-sidebar" href="{% url 'admin_lte:layout_top-nav-sidebar' %}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Top Navigation + Sidebar</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="layout_boxed" href="{% url 'admin_lte:layout_boxed' %}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Boxed</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="layout_fixed-sidebar" href="{% url 'admin_lte:layout_fixed-sidebar' %}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Fixed Sidebar</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="layout_fixed-topnav" href="{% url 'admin_lte:layout_fixed-topnav' %}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Fixed Navbar</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="layout_fixed-footer" href="{% url 'admin_lte:layout_fixed-footer' %}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Fixed Footer</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="layout_collapsed-sidebar" href="{% url 'admin_lte:layout_collapsed-sidebar' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Collapsed Sidebar</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li id="charts_menu" class="nav-item has-treeview">
+        <a id="charts" href="#" class="nav-link">
+          <i class="nav-icon fas fa-chart-pie"></i>
+          <p>Charts
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a id="chartjs" href="{% url 'admin_lte:chartjs' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>ChartJS</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="flot" href="{% url 'admin_lte:flot' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Flot</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="inline" href="{% url 'admin_lte:inline' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Inline</p>
+            </a>
+          </li>
+        </ul>
+        </li>
+        <li id="ui_menu" class="nav-item has-treeview">
+            <a id="ui_elements" href="#" class="nav-link">
+                <i class="nav-icon fas fa-tree"></i>
+                <p>UI Elements
+                <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a id="general_ui" href="{% url 'admin_lte:general' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>General</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="icons_ui" href="{% url 'admin_lte:icons' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Icons</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="buttons_ui" href="{% url 'admin_lte:buttons' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Buttons</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="sliders_ui" href="{% url 'admin_lte:sliders' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Sliders</p>
+            </a>
+          </li>
+          <li  class="nav-item">
+            <a id="modals_ui" href="{% url 'admin_lte:modals' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Modals & Alerts</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="navbar_ui" href="{% url 'admin_lte:navbar' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Navbar & Tabs</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="timeline_ui" href="{% url 'admin_lte:timeline' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Timeline</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="ribbons_ui" href="{% url 'admin_lte:ribbons' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Ribbons</p>
+            </a>
+          </li>
+        </ul>
+        </li>
+        <li id="forms_menu" class="nav-item has-treeview">
+        <a id="forms_panel" href="#" class="nav-link">
+          <i class="nav-icon fas fa-edit"></i>
+          <p>Forms<i class="fas fa-angle-left right"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a id="general_form" href="{% url 'admin_lte:general_form' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>General Elements</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="advanced_form" href="{% url 'admin_lte:advanced_form' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Advanced Elements</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="editors_form" href="{% url 'admin_lte:editors_form' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Editors</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="validation_form" href="{% url 'admin_lte:validation_form' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Validation</p>
+            </a>
+          </li>
+        </ul>
+        </li>
+        <li id="tables_menu" class="nav-item has-treeview">
+        <a id="tables_panel" href="#" class="nav-link">
+          <i class="nav-icon fas fa-table"></i>
+          <p>Tables
+            <i class="fas fa-angle-left right"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a id="simple_table" href="{% url 'admin_lte:simple_table' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Simple Tables</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="data_table" href="{% url 'admin_lte:data_table' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>DataTables</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="jsgrid_table" href="{% url 'admin_lte:jsgrid_table' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>jsGrid</p>
+            </a>
+          </li>
+        </ul>
+        </li>
+        <li class="nav-header">EXAMPLES</li>
+        <li class="nav-item">
+        <a id="calendar_menu" href="{% url 'admin_lte:calendar' %}" class="nav-link">
+          <i class="nav-icon far fa-calendar-alt"></i>
+          <p>Calendar
+            <span class="badge badge-info right">2</span>
+          </p>
+        </a>
+        </li>
+        <li class="nav-item">
+        <a id="gallery_menu" href="{% url 'admin_lte:gallery' %}" class="nav-link">
+          <i class="nav-icon far fa-image"></i>
+          <p>Gallery
+          </p>
+        </a>
+        </li>
+        <li id="mailbox_menu" class="nav-item has-treeview">
+        <a id="mailbox_panel" href="#" class="nav-link">
+          <i class="nav-icon far fa-envelope"></i>
+          <p>Mailbox
+            <i class="fas fa-angle-left right"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a id="mailbox_maibox" href="{% url 'admin_lte:mailbox_mailbox' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Inbox</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="mailbox_compose" href="{% url 'admin_lte:compose_mailbox' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Compose</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="mailbox_read" href="{% url 'admin_lte:read-mail_mailbox' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Read</p>
+            </a>
+          </li>
+        </ul>
+        </li>
+        <li id="pages_menu" class="nav-item has-treeview">
+          <a id="pages_panel" href="#" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>Pages
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a id="pages_invoice" href="{% url 'admin_lte:pages_invoice' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Invoice</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="pages_profile" href="{% url 'admin_lte:pages_profile' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Profile</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="pages_e-commerce" href="{% url 'admin_lte:pages_e-commerce' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>E-commerce</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="pages_projects" href="{% url 'admin_lte:pages_projects' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Projects</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="pages_project-add" href="{% url 'admin_lte:pages_project-add' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Project Add</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="pages_project-edit" href="{% url 'admin_lte:pages_project-edit' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Project Edit</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="pages_project-detail" href="{% url 'admin_lte:pages_project-detail' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Project Detail</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="pages_contacts" href="{% url 'admin_lte:pages_contacts' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Contacts</p>
+            </a>
+          </li>
+        </ul>
+        </li>
+        <li id="extra_menu" class="nav-item has-treeview">
+          <a id="extra_panel" href="#" class="nav-link">
+            <i class="nav-icon far fa-plus-square"></i>
+            <p>
+              Extras
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a id="extra_login" href="{% url 'admin_lte:extra_login' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Login</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_register" href="{% url 'admin_lte:extra_register' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Register</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_forgot" href="{% url 'admin_lte:extra_forgot' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Forgot Password</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_recover" href="{% url 'admin_lte:extra_recover' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Recover Password</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_lockscreen" href="{% url 'admin_lte:extra_lockscreen' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Lockscreen</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_leg-user-menu" href="{% url 'admin_lte:extra_leg-user-menu' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Legacy User Menu</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_lang" href="{% url 'admin_lte:extra_lang' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Language Menu</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_404" href="{% url 'admin_lte:extra_404' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Error 404</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_500" href="{% url 'admin_lte:extra_500' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Error 500</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_pace" href="{% url 'admin_lte:extra_pace' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Pace</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_blank" href="{% url 'admin_lte:extra_blank' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Blank Page</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="extra_starter" href="{% url 'admin_lte:extra_starter' %}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Starter Page</p>
+            </a>
+          </li>
+        </ul>
+        </li>
+        <li class="nav-header">MISCELLANEOUS</li>
+        <li class="nav-item">
+        <a href="https://admin_lte.io/docs/3.0" class="nav-link">
+          <i class="nav-icon fas fa-file"></i>
+          <p>Documentation</p>
+        </a>
+        </li>
+        <li class="nav-header">MULTI LEVEL EXAMPLE</li>
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fas fa-circle nav-icon"></i>
+          <p>Level 1</p>
+        </a>
+        </li>
+        <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-circle"></i>
+          <p>
+            Level 1
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Level 2</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>
+                Level 2
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Level 3</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Level 3</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Level 3</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Level 2</p>
+            </a>
+          </li>
+        </ul>
+        </li>
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fas fa-circle nav-icon"></i>
+          <p>Level 1</p>
+        </a>
+        </li>
+        <li class="nav-header">LABELS</li>
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon far fa-circle text-danger"></i>
+          <p class="text">Important</p>
+        </a>
+        </li>
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon far fa-circle text-warning"></i>
+          <p>Warning</p>
+        </a>
+        </li>
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon far fa-circle text-info"></i>
+          <p>Informational</p>
+        </a>
+        </li>
+    </ul>
+</nav>

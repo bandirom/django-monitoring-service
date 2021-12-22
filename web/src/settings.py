@@ -71,6 +71,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     'main.apps.MainConfig',
+    'admin_lte.apps.AdminLteConfig',
 
 ]
 

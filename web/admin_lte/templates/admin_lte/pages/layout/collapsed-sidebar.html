@@ -1,0 +1,55 @@
+{% extends 'admin_lte/base.html' %}
+{% load static %}
+
+{% block title %} AdminLTE 3 | Collapsed Sidebar {% endblock %}
+
+{% block head %}
+<script>
+    var open_menu = "layout_menu"
+    var active_menu = "layout_panel"
+    var active_submenu = "layout_collapsed-sidebar"
+</script>
+{% endblock %}
+
+{% block body_class %}
+<body class="hold-transition sidebar-mini sidebar-collapse">
+{% endblock %}
+
+{% block content %}
+<section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- Default box -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Title</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i></button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                Start creating your amazing application!
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                Footer
+              </div>
+              <!-- /.card-footer-->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'admin_lte/dist/js/admin_lte.min.js' %}"></script>
+<script src="{% static 'admin_lte/dist/js/demo.js' %}"></script>
+{% endblock %}
+

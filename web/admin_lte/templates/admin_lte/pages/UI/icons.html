@@ -1,0 +1,43 @@
+{% extends 'admin_lte/base.html' %}
+{% load static %}
+
+{% block title %} AdminLTE 3 | Icons {% endblock %}
+
+{% block body_class %}
+<body class="hold-transition sidebar-mini">
+{% endblock %}
+
+{% block head %}
+<script>
+    var open_menu = "ui_menu"
+    var active_menu = "ui_elements"
+    var active_submenu = "icons_ui"
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="content">
+      <div class="container-fluid">
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            <h3 class="card-title">Icons</h3>
+          </div> <!-- /.card-body -->
+          <div class="card-body">
+            <p>You can use any font library you like with AdminLTE 3.</p>
+            <strong>Recommendations</strong>
+            <div>
+              <a href="https://fontawesome.com/">Font Awesome</a><br>
+              <a href="https://useiconic.com/open/">Iconic Icons</a><br>
+              <a href="http://ionicons.com/">Ion Icons</a><br>
+            </div>
+          </div><!-- /.card-body -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'admin_lte/dist/js/admin_lte.min.js' %}"></script>
+<script src="{% static 'admin_lte/dist/js/demo.js' %}"></script>
+{% endblock %}
+
